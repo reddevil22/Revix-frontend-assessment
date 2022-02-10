@@ -18,7 +18,7 @@ export function Explore() {
     
     const { isLoading, isError, data, error } = useQuery<CoinGekoCoinListResponse[], Error>('coins', getCoins)
 
-    const { data: ping, isLoading: pingIsLoading, isError: pingError } = useQuery('ping', async () => {
+    const { data: ping } = useQuery('ping', async () => {
         const req = await axios.get('https://api.coingecko.com/api/v3/ping')
         return req.data
     })
