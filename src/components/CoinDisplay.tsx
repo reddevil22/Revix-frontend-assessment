@@ -48,7 +48,7 @@ export function CoinDisplay() {
 
     const { isLoading, isError, data, error } = useQuery<CoinGekoCoinResponse, Error>(['coin', coinId], () => getCoinByID(coinId), { enabled: !!coinId, })
 
-    const { isLoading: chartIsLoading, isError: chartisError, data: chartData, error: chartError } = useQuery<CoinGekoCoinChartData, Error>(['coinChartData', timeInterval], () => getCoinChartData(coinId, timeInterval), { enabled: !!coinId, })
+    const { isLoading: chartIsLoading, data: chartData } = useQuery<CoinGekoCoinChartData, Error>(['coinChartData', timeInterval], () => getCoinChartData(coinId, timeInterval), { enabled: !!coinId, })
 
     const options: Highcharts.Options = {
         title: {
