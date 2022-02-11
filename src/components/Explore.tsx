@@ -42,7 +42,7 @@ export function Explore() {
                         type="search"
                         name="search-form"
                         id="search-form"
-                        placeholder="Search for coin"
+                        placeholder="Search current page for coin"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)} />
                     <button type="submit" className="absolute right-2 top-3 mr-4">

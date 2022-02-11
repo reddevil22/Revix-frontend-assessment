@@ -157,3 +157,8 @@ export interface CoinGekoCoinChartData {
     prices: [number, number][],
     total_volumes: [number, number][],
 }
+
+export interface ITimeInterval {
+    label: string,
+    interval: string,
+}

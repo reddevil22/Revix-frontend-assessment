@@ -3,7 +3,7 @@ import { API_URL } from "../utils";
 
 //@ts-ignore
 export async function getCoins(pageParam: number) {
-    const data = await axios.get(`https://${API_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${pageParam }&sparkline=false`);
+    const data = await axios.get(`https://${API_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=${pageParam }&sparkline=false`);
 
     return data.data/* .slice(0, 10) */;
 }
