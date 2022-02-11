@@ -74,7 +74,6 @@ export function CoinDisplay() {
     };
 
     const radioHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log("🚀 ~ file: CoinDisplay.tsx ~ line 77 ~ radioHandler ~ event", event.target.value)
         setTimeInterval(event.target.value);
     };
 

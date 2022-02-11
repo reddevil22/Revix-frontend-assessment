@@ -7,7 +7,7 @@ interface ITabs {
 
 export function Tabs({ intervals, onChange }: ITabs) {
     return (
-        <div className="grid grid-cols-6 bg-gray-200 rounded-xl p-2 space-x-2 w-[40rem]" x-data="app" onChange={onChange}>
+        <div className="grid sm:grid-cols-6 grid-cols-2 bg-gray-200 rounded-xl p-2 space-x-2 sm:w-[40rem]" x-data="app" onChange={onChange}>
             {intervals.map((interval, index) => {
                 return (
                     <div>
