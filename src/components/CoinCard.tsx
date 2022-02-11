@@ -8,7 +8,7 @@ interface ICoinCard {
 
 export function CoinCard({ symbol, current_price, price_change_24h, price_change_percentage_24h, image }: ICoinCard) {
     return (
-        <div className="bg-white rounded-3xl border shadow-xl p-8 w-3/6">
+        <div className="bg-white rounded-3xl border shadow-xl p-8">
             <div className="flex justify-between items-center mb-4">
                 <button className="inline-flex items-center justify-center w-14 h-14 text-blue-100 bg-gradient-to-r rounded-full">
                     <img src={image} alt={`${symbol}`} />
