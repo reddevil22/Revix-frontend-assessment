@@ -1,3 +1,4 @@
 export * from './Explore';
 export * from './Home';
-export * from './CoinDisplay'
+export * from './CoinDisplay';
+export * from './CoinCard';

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { Link, Outlet } from 'react-router-dom'
+import { CoinCard } from '../components';
 import { getCoins } from '../api'
 import { CoinGekoCoinListResponse } from '../utils'
 
@@ -15,7 +16,7 @@ const checkName = (name: string, str: string) => {
 export function Explore() {
 
     const [query, setQuery] = useState("");
-    
+
     const { isLoading, isError, data, error } = useQuery<CoinGekoCoinListResponse[], Error>('coins', getCoins)
 
     const { data: ping } = useQuery('ping', async () => {
@@ -58,15 +59,20 @@ export function Explore() {
                     */
                     onChange={(e) => setQuery(e.target.value)}
                 />
-                <ul>
+                <div className="flex flex-col">
                     {
                         filteredArr.map(coin => {
-                            return <Link to={`/explore/${coin.id}`}>
-                                <li key={coin.id}>{coin.name}</li>
+                            return <Link to={`/explore/${coin.id}`} className="m-8">
+                                <CoinCard
+                                    symbol={coin.symbol}
+                                    current_price={coin.current_price}
+                                    price_change_24h={coin.price_change_24h}
+                                    price_change_percentage_24h={coin.price_change_percentage_24h}
+                                    image={coin.image} />
                             </Link>
                         })
                     }
-                </ul>
+                </div>
             </div>
             <Outlet />
         </div>
